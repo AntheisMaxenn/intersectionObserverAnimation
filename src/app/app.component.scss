@@ -1,0 +1,42 @@
+:root {
+    --delay-order: 1;
+}
+
+.wrapper {
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+}
+
+section {
+    scroll-snap-align: start;
+    height: 100vh;
+    padding: 5rem;
+    h1 {
+        font-weight: bold;
+    }
+    // h1.fadeIn {
+    //     animation: animate__fadeInLeftBig 5s;
+    //     animation-duration: 1s;
+    // }
+}
+
+section:nth-of-type(even) {
+    background-color: lightgray;
+}
+
+.animateMe {
+    opacity: 0;
+    animation: anim1 1s forwards ease-out;
+    animation-delay: calc(var(--delay-order) * 100ms);
+}
+
+@keyframes anim1 {
+    from {
+        transform: translateX(-100px);
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
